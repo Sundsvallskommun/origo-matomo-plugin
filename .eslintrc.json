@@ -1,0 +1,39 @@
+{
+  "extends": "airbnb-base",
+  "parserOptions": {
+    "ecmaVersion": 2022,
+    "sourceType": "module"
+  },
+  "env": {
+    "browser": true
+  },
+  "rules": {
+    "comma-dangle": [
+      "error",
+      "never"
+    ],
+    "import/no-unresolved": "off",
+    "new-cap": "off",
+    "prefer-destructuring": "off",
+    "max-len": "off",
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": [
+          "vite.config.js",
+          "vite.dashboard.config.js"
+        ],
+        "optionalDependencies": false
+      }
+    ],
+    "no-underscore-dangle": [
+      "error",
+      {
+        "allow": [
+          "_paq"
+        ]
+      }
+    ],
+    "import/extensions": "off"
+  }
+}

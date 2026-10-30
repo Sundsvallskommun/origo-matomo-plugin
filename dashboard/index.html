@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kartstatistik</title>
+</head>
+<body>
+  <header class="top">
+    <div class="top-inner">
+      <h1 id="title">Kartstatistik</h1>
+      <div class="top-actions">
+        <span id="user" class="user"></span>
+        <button type="button" id="login" hidden>Logga in</button>
+        <button type="button" id="logout" class="secondary" hidden>Logga ut</button>
+        <button type="button" id="open-settings" class="secondary">Inställningar</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="filters">
+      <label class="field">
+        <span>Webbplats</span>
+        <select id="site"></select>
+      </label>
+      <label class="field">
+        <span>Karta</span>
+        <select id="map"><option value="">Alla kartor</option></select>
+      </label>
+      <div class="field">
+        <span>Period</span>
+        <div id="presets" class="presets"></div>
+      </div>
+      <div class="field dates">
+        <label><span>Från</span><input type="date" id="from" /></label>
+        <label><span>Till</span><input type="date" id="to" /></label>
+      </div>
+    </div>
+
+    <div id="status" aria-live="polite"></div>
+
+    <div id="tiles" class="tiles"></div>
+
+    <section class="card wide">
+      <h2>Händelser per dag</h2>
+      <div id="trend"></div>
+    </section>
+
+    <div id="groups"></div>
+
+    <details class="card wide">
+      <summary><h2>Alla kategorier och händelser</h2></summary>
+      <div id="categories"></div>
+    </details>
+  </main>
+
+  <dialog id="settings">
+    <form method="dialog">
+      <h2>Inställningar</h2>
+      <label class="field">
+        <span>Adress till Matomo</span>
+        <input type="url" name="url" placeholder="https://matomo.example.se/" required />
+      </label>
+      <label class="field">
+        <span>Token (token_auth)</span>
+        <input type="password" name="token" autocomplete="off" />
+        <small>Skapas i Matomo under Personligt &rsaquo; Säkerhet &rsaquo; Autentiseringstoken. Behövs inte om anonyma användare får läsa statistiken.</small>
+      </label>
+      <label class="check">
+        <input type="checkbox" name="remember" />
+        <span>Kom ihåg på den här datorn</span>
+      </label>
+      <div class="actions">
+        <button type="submit" value="cancel" class="secondary" formnovalidate>Avbryt</button>
+        <button type="submit" value="save">Spara</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script type="module" src="./dashboard.js"></script>
+</body>
+</html>

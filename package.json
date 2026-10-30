@@ -1,0 +1,27 @@
+{
+  "name": "origo-matomo-plugin",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Matomo event tracking for Origo",
+  "main": "origo-matomo.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Sundsvallskommun/origo-matomo-plugin.git"
+  },
+  "scripts": {
+    "start": "vite build --watch --mode development",
+    "build": "vite build",
+    "dashboard": "vite --config vite.dashboard.config.js",
+    "build:dashboard": "vite build --config vite.dashboard.config.js",
+    "lint": "eslint origo-matomo.js src dashboard"
+  },
+  "author": "Sundsvalls kommun",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^8.57.1",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.30.0",
+    "vite": "^8.3.5"
+  },
+  "type": "module"
+}
